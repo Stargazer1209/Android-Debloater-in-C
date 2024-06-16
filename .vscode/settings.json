@@ -14,7 +14,7 @@
         "unistd.h": "c",
         "device_func.h": "c"
     },
-    "cmake.sourceDirectory": "D:\\0PROJECTS\\BTBU-INCLASS\\ProjecTrainingC",
+    "cmake.sourceDirectory": "D:/0PROJECTS/BTBU-INCLASS/Android-Debloater-in-C",
     "cmake.configureOnOpen": true,
     "C_Cpp.errorSquiggles": "disabled",
     
