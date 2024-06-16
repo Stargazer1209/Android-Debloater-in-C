@@ -1,0 +1,321 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Cambalache 0.90.2 -->
+<interface>
+    <!-- interface-name AndroidTools.ui -->
+
+    <object class="GtkApplicationWindow" id="main_window">
+        <property name="default-height">800</property>
+        <property name="default-width">800</property>
+        <property name="title">安卓系统精简器</property>
+        <child>
+            <object class="GtkBox">
+                <property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
+                <child>
+                    <object class="GtkBox">
+                        <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+                        <child>
+                            <object class="GtkBox">
+                                <property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
+                                <child>
+                                    <object class="GtkButton" id="ref_dev">
+                                        <property name="label">刷新设备列表</property>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkButton" id="reboot_dev">
+                                        <property name="label">重启当前设备</property>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkLabel">
+                                        <property name="width-chars">3</property>
+                                    </object>
+                                </child>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkFrame">
+                            <property name="vexpand">TRUE</property>
+                                <child>
+                                    <object class="GtkBox" id="dev_list">
+                                        <property name="hexpand">FALSE</property>
+                                        <property name="vexpand">FALSE</property>
+                                        <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+                                        <property name="width-request">20</property>
+                                    </object>
+                                </child>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkLabel" id="welcome_guide">
+                                <property name="width-chars">20</property>
+                                <property name="max-width-chars">20</property>
+                                <property name="wrap">TRUE</property>
+                                <property name="label">欢迎使用安卓系统精简器!&#xA;本软件的功能是: 帮助您精简安卓系统自带的冗余应用和组件.&#xA;软件正常运行需要您的手机开启USB调试模式,&#xA;软件结束使用后您可以重新关闭USB调试模式.</property>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+                <child>
+                    <object class="GtkBox">
+                        <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+                        <child>
+                            <object class="GtkBox">
+                                <property name="orientation">GTK_ORIENTATION_HORIZONTAL</property>
+                                <child>
+                                    <object class="GtkLabel">
+                                        <property name="width-chars">3</property>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkButton" id="ref_app">
+                                        <property name="label">刷新应用列表</property>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkButton" id="disable">
+                                        <property name="label">禁用已选中应用</property>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkButton" id="enable">
+                                        <property name="label">恢复已选中应用</property>
+                                    </object>
+                                </child>
+                                
+                                <child>
+                                    <object class="GtkLabel">
+                                        <property name="hexpand">TRUE</property>
+                                        <property name="width-chars">3</property>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkMenuButton" id="setting">
+                                        <property name="label">设置</property>
+                                        <property name="popover">
+                                            <object class="GtkPopover">
+                                                <property name="child">
+                                                    <object class="GtkBox">
+                                                        <property name="orientation">vertical</property>
+                                                        <child>
+                                                            <object class="GtkButton"
+                                                                id="theme_button">
+                                                                <property name="label">主题</property>
+                                                            </object>
+                                                        </child>
+                                                        <child>
+                                                            <object class="GtkButton"
+                                                                id="about_button">
+                                                                <property name="label">关于</property>
+                                                            </object>
+                                                        </child>
+                                                    </object>
+                                                </property>
+                                            </object>
+                                        </property>
+                                    </object>
+                                </child>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkBox">
+                                <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+                                <child>
+                                    <object class="GtkLabel">
+                                        <property name="label">已知应用</property>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkScrolledWindow">
+                                        <property name="has-frame">TRUE</property>
+                                        <property name="hexpand">FALSE</property>
+                                        <property name="vexpand">TRUE</property>
+                                        <child>
+                                            <object class="GtkBox" id="known_app_list_box">
+                                                <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+                                                <property name="height-request">40</property>
+                                            </object>
+                                        </child>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkLabel">
+                                        <property name="label">未知应用</property>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkScrolledWindow">
+                                        <property name="has-frame">TRUE</property>
+                                        <property name="hexpand">FALSE</property>
+                                        <property name="vexpand">TRUE</property>
+                                        <child>
+                                            <object class="GtkBox" id="unknown_app_list_box">
+                                                <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
+                                            </object>
+                                        </child>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkTextView" id="package_info_textview">
+                                        
+                                        <property name="cursor-visible">FALSE</property>
+                                        <property name="editable">FALSE</property>
+                                        <property name="height-request">100</property>
+                                        <property name="hexpand">FALSE</property>
+                                        <property name="vexpand">FALSE</property>
+                                    </object>
+                                </child>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+            </object>
+        </child>
+    </object>
+    <object class="GtkApplicationWindow" id="settings_window">
+        <property name="default-height">450</property>
+        <property name="default-width">500</property>
+        <property name="title">设置应用主题</property>
+        <child>
+            <object class="GtkBox">
+                <property name="orientation">vertical</property>
+                <child>
+                    <object class="GtkLabel">
+                        <property name="vexpand">True</property>
+                    </object>
+                </child>
+                <child>
+                    <object class="GtkBox">
+                        <child>
+                            <object class="GtkLabel">
+                                <property name="width-chars">10</property>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkBox">
+                                <property name="orientation">vertical</property>
+                                <child>
+                                    <object class="GtkLabel">
+                                        <property name="label">您也可以粘贴自己的GTK主题文件夹到/share/themes目录下&#xA;刷新后它就会显示在这里&#xA;应用选中主题后重新打开程序生效</property>
+                                        <property name="xalign">0.1</property>
+                                    </object>
+                                </child>
+                                <child>
+                                    <object class="GtkBox" id="theme_menu_button_box">
+                                        <property name="orientation">horizontal</property>
+                                        <child>
+                                            <object class="GtkLabel">
+                                                <property name="width-chars">2</property>
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkMenuButton" id="theme_menu_button">
+                                                <property name="hexpand">TRUE</property>
+                                                <property name="label">默认空标签</property>
+                                                <property name="popover">
+                                                    <object class="GtkPopover">
+                                                        <property name="child">
+                                                            <object class="GtkBox"
+                                                                id="theme_menu_box">
+                                                                <property name="orientation">vertical</property>
+                                                            </object>
+                                                        </property>
+                                                    </object>
+                                                </property>
+                                            </object>
+                                        </child>
+                                        <child>
+                                            <object class="GtkLabel">
+                                                <property name="width-chars">2</property>
+                                            </object>
+                                        </child>
+                                    </object>
+                                </child>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkLabel">
+                                <property name="width-chars">10</property>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+                <child>
+                    <object class="GtkLabel">
+                        <property name="height-request">20</property>
+                    </object>
+                </child>
+                <child>
+                    <object class="GtkBox">
+                        <child>
+                            <object class="GtkLabel">
+                                <property name="hexpand">True</property>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkButton" id="refresh">
+                                <property name="label">刷新主题列表</property>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkLabel">
+                                <property name="width-chars">3</property>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkButton" id="apply">
+                                <property name="label">应用选中主题</property>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkLabel">
+                                <property name="width-chars">3</property>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkButton" id="reset">
+                                <property name="label">恢复默认主题</property>
+                            </object>
+                        </child>
+                        <child>
+                            <object class="GtkLabel">
+                                <property name="hexpand">True</property>
+                            </object>
+                        </child>
+                    </object>
+                </child>
+                <child>
+                    <object class="GtkLabel">
+                        <property name="vexpand">True</property>
+                    </object>
+                </child>
+            </object>
+        </child>
+    </object>
+    <object class="GtkApplicationWindow" id="warning">
+        <property name="default-height">200</property>
+        <property name="default-width">400</property>
+        <property name="title">警告</property>
+        <child>
+            <object class="GtkLabel" id="warning_message">
+                <property name="hexpand">TRUE</property>
+                <property name="vexpand">TRUE</property>
+                <property name="xalign">0.3</property>
+            </object>
+        </child>
+    </object>
+    <object class="GtkCheckButton" id="device">
+        <property name="height-request">1</property>
+        <property name="hexpand">FALSE</property>
+        <property name="vexpand">FALSE</property>
+        <property name="width-request">15</property>
+    </object>
+    <object class="GtkAboutDialog" id="about">
+        <property name="artists">Xiaokang</property>
+        <property name="authors">Xiaokang</property>
+        <property name="comments">一款清除安卓手机冗余系统组件的应用</property>
+        <property name="copyright">made by Xiaokang</property>
+        <property name="program-name">安卓系统精简器</property>
+        <property name="system-information">Windows 10 &amp; 11 64bit&#xA;Android 7.0+</property>
+    </object>
+</interface>

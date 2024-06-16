@@ -1,0 +1,6 @@
+com.miui.systemAdSolution=智能服务: 向系统界面内，如搜索栏、通知栏位置添加推广信息展示的组件。
+com.miui.analytics=Analytics: 在后台获取设备跟踪信息和设备分析信息，并上传到小米服务器的组件。
+com.miui.hybrid=快应用服务框架: 小米商店快应用的运行依赖组件，禁用后所有快应用将自动被卸载，并且无法安装新的快应用。
+com.android.traceur=系统跟踪: 在后台生成设备跟踪信息，并存储在本地。
+com.android.bluetoothmidiservice=蓝牙MIDI服务: 蓝牙连接MIDI设备的服务组件，常见的MIDI设备诸如电子钢琴。 
+com.google.android.overlay.gmsconfig.common=谷歌移动服务配置外观: 一些位置信息，谷歌应用的默认设置值，禁用后不影响正常运行。

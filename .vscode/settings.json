@@ -1,0 +1,21 @@
+{
+    "files.associations": {
+        "gtk.h": "c",
+        "gsk.h": "c",
+        "gdk.h": "c",
+        "gtkcss.h": "c",
+        "gtkcssenums.h": "c",
+        "gtkcssenumtypes.h": "c",
+        "gtkcsserror.h": "c",
+        "gtkcsslocation.h": "c",
+        "gtkcsssection.h": "c",
+        "glib.h": "c",
+        "gtkaboutdialog.h": "c",
+        "unistd.h": "c",
+        "device_func.h": "c"
+    },
+    "cmake.sourceDirectory": "D:\\0PROJECTS\\BTBU-INCLASS\\ProjecTrainingC",
+    "cmake.configureOnOpen": true,
+    "C_Cpp.errorSquiggles": "disabled",
+    
+}

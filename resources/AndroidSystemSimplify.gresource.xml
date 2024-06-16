@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+    <gresource prefix="/com/github/Stargazer1209/AndroidTools">
+        <file>resources/AndroidSystemSimplify.ui</file>
+    </gresource>
+</gresources>
