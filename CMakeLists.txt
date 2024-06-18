@@ -10,7 +10,7 @@ include(GNUInstallDirs)
 # make
 
 # gcc args
-# set(CMAKE_C_FLAGS ${CMAKE_C_FLAGS} -mwindows)
+set(CMAKE_C_FLAGS ${CMAKE_C_FLAGS} -mwindows)
 
 # configure debug time file dependencies
 configure_file($ENV{ANDROID_HOME}/platform-tools/adb.exe ${CMAKE_CURRENT_BINARY_DIR}/adb.exe COPYONLY)
